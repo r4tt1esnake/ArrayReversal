@@ -19,6 +19,13 @@ class ArrayReversal {
 			System.out.println("Element at " + i + ": " + arr1[i]);
 		}
 
+		arr1 = method2(arr);
+
+		System.out.println("Inverted array using method 2:");
+		for(int i = 0; i < arr1.length; i++) {
+			System.out.println("Element at " + i + ": " + arr1[i]);
+		}
+
 	}
 
 	public static int[] method1(int[] arr) {
@@ -35,9 +42,19 @@ class ArrayReversal {
 
 	}
 
-	public int[] method2(int[] arr) {
+	public static int[] method2(int[] arr) {
 
-		// TODO: Implement method 2.
+		int temp;
+		int count = 1;
+
+		for(int i = 0; i < (arr.length / 2); i++) {
+			temp = arr[i];
+			arr[i] = arr[arr.length - count];
+			arr[arr.length - count] = temp;
+			count++;
+		}
+
+		return arr;
 
 	}
 
